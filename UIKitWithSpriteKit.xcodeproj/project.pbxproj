@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E7D6B3025D8F82900AD24CA /* Magic.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7E7D6B2F25D8F82900AD24CA /* Magic.sks */; };
 		7E96FE7E25BD57C700C49A49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E96FE7D25BD57C700C49A49 /* AppDelegate.swift */; };
 		7E96FE8025BD57C700C49A49 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E96FE7F25BD57C700C49A49 /* SceneDelegate.swift */; };
 		7E96FE8225BD57C700C49A49 /* SnowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E96FE8125BD57C700C49A49 /* SnowViewController.swift */; };
@@ -18,9 +19,11 @@
 		7E9AB0FB25D8EE4700F73171 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9AB0FA25D8EE4700F73171 /* ViewController.swift */; };
 		7E9AB0FE25D8EFF000F73171 /* PopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9AB0FD25D8EFF000F73171 /* PopViewController.swift */; };
 		7E9AB10125D8F03700F73171 /* Paticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7E9AB10025D8F03700F73171 /* Paticle.sks */; };
+		7E9AB10625D8F36900F73171 /* DetailedPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9AB10525D8F36900F73171 /* DetailedPopViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7E7D6B2F25D8F82900AD24CA /* Magic.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Magic.sks; sourceTree = "<group>"; };
 		7E96FE7A25BD57C700C49A49 /* UIKitWithSpriteKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitWithSpriteKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E96FE7D25BD57C700C49A49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E96FE7F25BD57C700C49A49 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +37,7 @@
 		7E9AB0FA25D8EE4700F73171 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7E9AB0FD25D8EFF000F73171 /* PopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopViewController.swift; sourceTree = "<group>"; };
 		7E9AB10025D8F03700F73171 /* Paticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Paticle.sks; sourceTree = "<group>"; };
+		7E9AB10525D8F36900F73171 /* DetailedPopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedPopViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,7 @@
 				7E9AB0FA25D8EE4700F73171 /* ViewController.swift */,
 				7E96FE8125BD57C700C49A49 /* SnowViewController.swift */,
 				7E9AB0FD25D8EFF000F73171 /* PopViewController.swift */,
+				7E9AB10525D8F36900F73171 /* DetailedPopViewController.swift */,
 				7E96FE8325BD57C700C49A49 /* Main.storyboard */,
 				7E96FE8625BD57C700C49A49 /* Assets.xcassets */,
 				7E96FE8825BD57C700C49A49 /* LaunchScreen.storyboard */,
@@ -78,6 +83,7 @@
 				7E96FE9225BD581500C49A49 /* Snow.sks */,
 				7E96FE9525BD63AC00C49A49 /* SnowScene.swift */,
 				7E9AB10025D8F03700F73171 /* Paticle.sks */,
+				7E7D6B2F25D8F82900AD24CA /* Magic.sks */,
 			);
 			path = UIKitWithSpriteKit;
 			sourceTree = "<group>";
@@ -140,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E9AB10125D8F03700F73171 /* Paticle.sks in Resources */,
+				7E7D6B3025D8F82900AD24CA /* Magic.sks in Resources */,
 				7E96FE8A25BD57C700C49A49 /* LaunchScreen.storyboard in Resources */,
 				7E96FE8725BD57C700C49A49 /* Assets.xcassets in Resources */,
 				7E96FE9325BD581500C49A49 /* Snow.sks in Resources */,
@@ -154,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E9AB10625D8F36900F73171 /* DetailedPopViewController.swift in Sources */,
 				7E9AB0FB25D8EE4700F73171 /* ViewController.swift in Sources */,
 				7E96FE8225BD57C700C49A49 /* SnowViewController.swift in Sources */,
 				7E9AB0FE25D8EFF000F73171 /* PopViewController.swift in Sources */,

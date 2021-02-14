@@ -72,7 +72,7 @@ class PopViewController: UIViewController {
         isButtonAvailable = false
 
         let texture = SKTexture(image: image)
-        let scene = Scene()
+        let scene = PopScene()
         scene.emitter?.particleTexture = texture
         paticleView.presentScene(scene)
 
@@ -97,7 +97,7 @@ extension UIView {
     }
 }
 
-class Scene: SKScene {
+class PopScene: SKScene {
     let emitter: SKEmitterNode? = {
         let node = SKEmitterNode(fileNamed: "Paticle")
         node?.position = .zero
