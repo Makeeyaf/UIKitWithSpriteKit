@@ -2,96 +2,54 @@
 //  ViewController.swift
 //  UIKitWithSpriteKit
 //
-//  Created by Makeeyaf on 2021/01/24.
+//  Created by Makeeyaf on 2021/02/14.
 //
 
 import UIKit
-import SpriteKit
 
 class ViewController: UIViewController {
 
-    // MARK: Views
-
-    lazy var snowView: SKView = {
-        let view = SKView()
-        view.backgroundColor = .clear
-        let scene = SnowScene()
-        view.presentScene(scene)
+    lazy var snowButton: UIButton = {
+        let view = UIButton(type: .system)
+        view.setTitle("Snow", for: .normal)
+        view.addTarget(self, action: #selector(mainToSnowView), for: .touchUpInside)
         return view
     }()
 
-    lazy var photo: UIImageView = {
-        let view = UIImageView()
-        view.image = UIImage(named: "photo")
-        view.clipsToBounds = true
-        view.layer.cornerRadius = 6
-        view.contentMode = .scaleAspectFill
+    lazy var popButton: UIButton = {
+        let view = UIButton(type: .system)
+        view.setTitle("Pop", for: .normal)
+        view.addTarget(self, action: #selector(mainToPopView), for: .touchUpInside)
         return view
     }()
 
-    lazy var credit: UILabel = {
-        let view = UILabel()
-        view.attributedText = {
-            let normal: [NSAttributedString.Key: Any] = [
-                .font: UIFont.systemFont(ofSize: 16, weight: .regular),
-                .foregroundColor: UIColor.label,
-            ]
-            let underline: [NSAttributedString.Key: Any] = [
-                .font: UIFont.systemFont(ofSize: 16, weight: .regular),
-                .underlineStyle: NSUnderlineStyle.single.rawValue,
-                .foregroundColor: UIColor.systemGray,
-            ]
-
-            var text = NSMutableAttributedString()
-            [
-                NSAttributedString(string: "Photo by ", attributes: normal),
-                NSAttributedString(string: "Santiago Gomez", attributes: underline),
-                NSAttributedString(string: " on ", attributes: normal),
-                NSAttributedString(string: "Unsplash", attributes: underline),
-            ].forEach {
-                text.append($0)
-            }
-
-            return text
-        }()
+    lazy var buttonStack: UIStackView = {
+        let view = UIStackView(arrangedSubviews: [snowButton, popButton])
+        view.axis = .vertical
+        view.spacing = 15
         return view
     }()
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        overrideUserInterfaceStyle = .dark
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(buttonStack)
+        buttonStack.translatesAutoresizingMaskIntoConstraints = false
 
-        [photo, credit, snowView].forEach {
-            view.addSubview($0)
-            $0.translatesAutoresizingMaskIntoConstraints = false
-        }
-
-        setConstraints()
+        NSLayoutConstraint.activate([
+            buttonStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            buttonStack.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+        ])
     }
 
-    private func setConstraints() {
-        NSLayoutConstraint.activate([
-            photo.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            photo.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            photo.topAnchor.constraint(equalTo: view.topAnchor),
-            photo.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-        ])
+    // MARK: Actions
 
-        NSLayoutConstraint.activate([
-            credit.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            credit.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-        ])
+    @objc private func mainToSnowView() {
+        let vc = SnowViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
 
-        NSLayoutConstraint.activate([
-            snowView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            snowView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            snowView.topAnchor.constraint(equalTo: view.topAnchor),
-            snowView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-        ])
+    @objc private func mainToPopView() {
+        let vc = PopViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
-
