@@ -23,8 +23,15 @@ class ViewController: UIViewController {
         return view
     }()
 
+    lazy var detailedPopButton: UIButton = {
+        let view = UIButton(type: .system)
+        view.setTitle("DetailedPop", for: .normal)
+        view.addTarget(self, action: #selector(mainToDetailedPopView), for: .touchUpInside)
+        return view
+    }()
+
     lazy var buttonStack: UIStackView = {
-        let view = UIStackView(arrangedSubviews: [snowButton, popButton])
+        let view = UIStackView(arrangedSubviews: [snowButton, popButton, detailedPopButton])
         view.axis = .vertical
         view.spacing = 15
         return view
@@ -50,6 +57,11 @@ class ViewController: UIViewController {
 
     @objc private func mainToPopView() {
         let vc = PopViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+
+    @objc private func mainToDetailedPopView() {
+        let vc = DetailedPopViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
 }
